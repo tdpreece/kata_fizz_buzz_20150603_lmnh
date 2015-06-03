@@ -11,7 +11,7 @@ class FizzBuzzTests(unittest.TestCase):
     (0, 1),
     (2, "Fizz"),
     ])
-    def test_first_item_is_1(self, list_index, expected_value):
+    def test_output_list_values(self, list_index, expected_value):
         fizz_buzz_numbers = get_fizz_buzz_numbers()
         self.assertEqual(fizz_buzz_numbers[list_index], expected_value)
 
@@ -22,7 +22,7 @@ class FizzBuzzTests(unittest.TestCase):
     (15, "FizzBuzz"),
     (30, "FizzBuzz"),
     ])
-    def test_fizz_response_for_multiple_of_3(self, interger_in, expected_fizz_buzz_response):
+    def test_fizz_buzz_calculator(self, interger_in, expected_fizz_buzz_response):
         fizz_response = fizz_buzz_calc(interger_in)
         self.assertEqual(fizz_response, expected_fizz_buzz_response)
 
