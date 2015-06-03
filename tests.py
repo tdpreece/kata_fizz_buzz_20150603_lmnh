@@ -7,15 +7,20 @@ class FizzBuzzTests(unittest.TestCase):
         fizz_buzz_numbers = get_fizz_buzz_numbers()
         self.assertEqual(len(fizz_buzz_numbers), 100)
 
-    def test_first_item_is_1(self):
+    @parameterized.expand([
+    (0, 1),
+    (2, "Fizz"),
+    ])
+    def test_first_item_is_1(self, list_index, expected_value):
         fizz_buzz_numbers = get_fizz_buzz_numbers()
-        self.assertEqual(fizz_buzz_numbers[0], 1)
+        self.assertEqual(fizz_buzz_numbers[list_index], expected_value)
 
     @parameterized.expand([
     (1, 1),
     (3, "Fizz"),
     (5, "Buzz"),
     (15, "FizzBuzz"),
+    (30, "FizzBuzz"),
     ])
     def test_fizz_response_for_multiple_of_3(self, interger_in, expected_fizz_buzz_response):
         fizz_response = fizz_buzz_calc(interger_in)
